@@ -187,22 +187,22 @@
 		B6F0B5821E69406000374132 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B6F0B5831E69406000374132 /* FourViewController.h */,
-				B6F0B5841E69406000374132 /* FourViewController.m */,
-				B6F0B5851E69406000374132 /* HomeViewController.h */,
-				B6F0B5861E69406000374132 /* HomeViewController.m */,
-				B6F0B5871E69406000374132 /* NavigationController.h */,
-				B6F0B5881E69406000374132 /* NavigationController.m */,
-				B6F0B5891E69406000374132 /* OneViewController.h */,
-				B6F0B58A1E69406000374132 /* OneViewController.m */,
-				B6F0B58B1E69406000374132 /* SettingViewController.h */,
-				B6F0B58C1E69406000374132 /* SettingViewController.m */,
 				B6F0B58D1E69406000374132 /* TabbarController.h */,
 				B6F0B58E1E69406000374132 /* TabbarController.m */,
+				B6F0B5871E69406000374132 /* NavigationController.h */,
+				B6F0B5881E69406000374132 /* NavigationController.m */,
+				B6F0B5851E69406000374132 /* HomeViewController.h */,
+				B6F0B5861E69406000374132 /* HomeViewController.m */,
+				B6F0B58B1E69406000374132 /* SettingViewController.h */,
+				B6F0B58C1E69406000374132 /* SettingViewController.m */,
+				B6F0B5891E69406000374132 /* OneViewController.h */,
+				B6F0B58A1E69406000374132 /* OneViewController.m */,
 				B6F0B58F1E69406000374132 /* ThreeViewController.h */,
 				B6F0B5901E69406000374132 /* ThreeViewController.m */,
 				B6F0B5911E69406000374132 /* TwoViewController.h */,
 				B6F0B5921E69406000374132 /* TwoViewController.m */,
+				B6F0B5831E69406000374132 /* FourViewController.h */,
+				B6F0B5841E69406000374132 /* FourViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
