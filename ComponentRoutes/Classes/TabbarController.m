@@ -27,7 +27,12 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0),^{
     
         NSString *customURL = @"Route://Tabbar/HomeViewController/SettingViewController";
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:customURL]];
+        if ([[[UIDevice currentDevice] systemVersion] floatValue]<10.0){
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:customURL]];
+        }else{
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:customURL] options:@{} completionHandler:nil];
+        }
+
     });
     
     [[JLRoutes globalRoutes] addRoute:@"/Tabbar/:HomeVC/:SettingVC" handler:^BOOL(NSDictionary<NSString *,id> * _Nonnull parameters) {
