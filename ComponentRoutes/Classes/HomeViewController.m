@@ -35,7 +35,8 @@
     // Do any additional setup after loading the view.
     
     [self buildView];
-    
+    [self dispatch_sourceTest];
+
 }
 
 -(void)buildView{
@@ -47,16 +48,35 @@
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-leading-[button(100)]" options:0 metrics:@{@"leading":[NSNumber numberWithDouble:(self.view.frame.size.width-100)/2]} views:NSDictionaryOfVariableBindings(button)]];
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[button(40)]" options:0 metrics:@{@"top":[NSNumber numberWithDouble:64]} views:NSDictionaryOfVariableBindings(button)]];
-
     [self.view addSubview:self.tableView];
+    
 }
 
+-(void)dispatch_sourceTest{
+    dispatch_source_t source = dispatch_source_create(DISPATCH_SOURCE_TYPE_DATA_ADD, 0, 0, dispatch_get_main_queue());
+    dispatch_source_set_event_handler(source, ^{
+        unsigned long press = dispatch_source_get_data(source);
+        printf("==%ld",press);
+    });
+    dispatch_resume(source);
+    
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    NSArray *array = @[@1,@2,@3,@4,@5];
+    dispatch_apply(array.count, globalQueue, ^(size_t index) {
+        // do some work on data at index
+        printf("index == %zu\n",index);
+        dispatch_source_merge_data(source, 1);
+    });
+
+}
 
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-[_tableView]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_tableView)]];
+    
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-top-[_tableView]-|" options:0 metrics:@{@"top":[NSNumber numberWithDouble:64+40]} views:NSDictionaryOfVariableBindings(_tableView)]];
+    
 }
 
 #pragma mark --TableViewDelegate
@@ -78,6 +98,14 @@
         } else {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString]];
         }
+    }else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"你没有安装该应用" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }]];
+        [self presentViewController:alert animated:YES completion:^{
+            
+        }];
     }
 }
 

@@ -20,6 +20,7 @@
     // Override point for customization after application launch.
     return YES;
 }
+//设置通用链接的时候使用
 -(BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray * _Nullable))restorationHandler{
     if (userActivity.activityType == NSUserActivityTypeBrowsingWeb) {
         NSURL *webpageURL = userActivity.webpageURL;
