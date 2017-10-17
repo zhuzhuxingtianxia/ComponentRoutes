@@ -63,6 +63,12 @@ void dynamicMethodIMP(id self, SEL _cmd) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSString *uuid = [NSUUID UUID].UUIDString;
+   NSString *UUID = CFBridgingRelease(CFUUIDCreateString(kCFAllocatorDefault, CFUUIDCreate(kCFAllocatorDefault)));
+    CFUUIDRef uuidRef = CFUUIDCreate(NULL);
+   NSString *appUID = (NSString *) CFBridgingRelease(CFUUIDCreateString(NULL, uuidRef));
+    NSString *deviceUUID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    
     [self.view addSubview:self.button];
     [self.view addSubview:self.pasteLable];
     [self runtimeTest];
@@ -160,6 +166,7 @@ void dynamicMethodIMP(id self, SEL _cmd) {
         _lable.backgroundColor = [UIColor groupTableViewBackgroundColor];
         _lable.textAlignment = NSTextAlignmentCenter;
         _lable.numberOfLines = 0;
+        _lable.text = @"粘贴";
         [_lable pasteboardHandler];
     }
     return _lable;
@@ -173,6 +180,7 @@ void dynamicMethodIMP(id self, SEL _cmd) {
         _pasteLable.backgroundColor = [UIColor groupTableViewBackgroundColor];
         _pasteLable.textAlignment = NSTextAlignmentCenter;
         _pasteLable.numberOfLines = 0;
+        _pasteLable.text = @"复制";
         [_pasteLable pasteboardHandler];
     }
     return _pasteLable;
