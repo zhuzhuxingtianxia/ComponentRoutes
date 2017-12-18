@@ -15,8 +15,7 @@
 
 @implementation HomeViewController
 //第一模块按钮点击事件
-- (void)touch
-{
+- (void)touch{
     
     NSString *url = @"Route://NaviPush/OneViewController";
     
