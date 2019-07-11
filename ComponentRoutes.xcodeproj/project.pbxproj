@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B3823303E1CFD2E151B056C /* libPods-ComponentRoutes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E55B4C985778A9DC8088C149 /* libPods-ComponentRoutes.a */; };
 		B620C83D1E9CDF28005F8DFC /* UILabel+Pasteboard.m in Sources */ = {isa = PBXBuildFile; fileRef = B620C83C1E9CDF28005F8DFC /* UILabel+Pasteboard.m */; };
+		B6EDEA65213E14AA00E1E30E /* UIViewController+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = B6EDEA64213E14AA00E1E30E /* UIViewController+Swizzle.m */; };
 		B6F0B5511E69400C00374132 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F0B5501E69400C00374132 /* main.m */; };
 		B6F0B5541E69400C00374132 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B6F0B5531E69400C00374132 /* AppDelegate.m */; };
 		B6F0B55A1E69400D00374132 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6F0B5581E69400D00374132 /* Main.storyboard */; };
@@ -48,6 +49,8 @@
 		971D3C2715557B0A42AB0694 /* Pods-ComponentRoutes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComponentRoutes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComponentRoutes/Pods-ComponentRoutes.debug.xcconfig"; sourceTree = "<group>"; };
 		B620C83B1E9CDF28005F8DFC /* UILabel+Pasteboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Pasteboard.h"; sourceTree = "<group>"; };
 		B620C83C1E9CDF28005F8DFC /* UILabel+Pasteboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Pasteboard.m"; sourceTree = "<group>"; };
+		B6EDEA63213E14AA00E1E30E /* UIViewController+Swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Swizzle.h"; sourceTree = "<group>"; };
+		B6EDEA64213E14AA00E1E30E /* UIViewController+Swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Swizzle.m"; sourceTree = "<group>"; };
 		B6F0B54C1E69400C00374132 /* ComponentRoutes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComponentRoutes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6F0B5501E69400C00374132 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B6F0B5521E69400C00374132 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				B6F0B5531E69400C00374132 /* AppDelegate.m */,
 				B620C83B1E9CDF28005F8DFC /* UILabel+Pasteboard.h */,
 				B620C83C1E9CDF28005F8DFC /* UILabel+Pasteboard.m */,
+				B6EDEA63213E14AA00E1E30E /* UIViewController+Swizzle.h */,
+				B6EDEA64213E14AA00E1E30E /* UIViewController+Swizzle.m */,
 				B6F0B5821E69406000374132 /* Classes */,
 				B6F0B5581E69400D00374132 /* Main.storyboard */,
 				B6F0B55B1E69400D00374132 /* Assets.xcassets */,
@@ -398,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6F0B5931E69406000374132 /* FourViewController.m in Sources */,
+				B6EDEA65213E14AA00E1E30E /* UIViewController+Swizzle.m in Sources */,
 				B6F0B5541E69400C00374132 /* AppDelegate.m in Sources */,
 				B6F0B5951E69406000374132 /* NavigationController.m in Sources */,
 				B6F0B59A1E69406000374132 /* TwoViewController.m in Sources */,

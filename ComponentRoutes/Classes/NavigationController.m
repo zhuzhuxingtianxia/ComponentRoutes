@@ -18,6 +18,31 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+//自定义push操作，加载优化
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    if (self.viewControllers.count > 0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+        __weak typeof(viewController)Weakself = viewController;
+        self.interactivePopGestureRecognizer.delegate = (id)Weakself;
+        
+        if (animated) {
+            
+            CATransition *animation = [CATransition animation];
+            animation.duration = 0.4f;
+            animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+            animation.type = kCATransitionPush;
+            animation.subtype = kCATransitionFromRight;
+            [self.navigationController.view.layer addAnimation:animation forKey:nil];
+            [self.view.layer addAnimation:animation forKey:nil];
+            [super pushViewController:viewController animated:NO];
+            return;
+        }
+    }
+    [super pushViewController:viewController animated:animated];
+}
+
+/*
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     if (self.viewControllers.count > 0){
@@ -29,7 +54,7 @@
     [super pushViewController:viewController animated:animated];
     
 }
-
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
